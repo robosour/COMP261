@@ -4,13 +4,11 @@ import java.util.ArrayList;
 
 
 // decide the data structure for stops
-public class Stop {
-    //probably always have these three    
+public class Stop { 
     private GisPoint loc;
     private String name;
     private String id;
-
-    //Todo: add additional data structures
+    private ArrayList<Trip> trips = new ArrayList<>();
 
 
         
@@ -21,7 +19,19 @@ public class Stop {
         this.id = id;
     }
 
-    // add getters and setters etc
+    /** add a trip to the stop */
+    public void addTrip(Trip tr){
+        trips.add(tr);
+    }
+
+    /**
+     * Get list of trips
+     */
+    public ArrayList<Trip> getTrips(){
+        return this.trips;
+    }
+
+    // getters and setters 
     public GisPoint getLoc() {
         return loc;
     }
@@ -45,6 +55,13 @@ public class Stop {
     public void setId(String id) {
         this.id = id;
     }
+
+    
+    public String toString() {
+        return getId();
+    }
+
+   
 
         
     }

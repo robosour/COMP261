@@ -12,6 +12,14 @@ public class GisPoint {
         this.lon = lon;
     }
 
+    public double getLat() {
+        return this.lat;
+    }
+
+    public double getLon() {
+        return this.lon;
+    }
+
     public void add(double lon, double lat) {
         this.lat += lat;
         this.lon += lon;
@@ -32,21 +40,19 @@ public class GisPoint {
         this.lon -= point.lon;
     }
 
-    //to string
+    // to string
     public String toString() {
         return "(" + lon + ", " + lat + ")";
     }
 
-    // Distance calcuations could be improved to use real distance on earth calcuations.
+    // Distance calcuations could be improved to use real distance on earth
+    // calcuations.
     public double distance(double lon2, double lat2) {
-        return Math.sqrt(Math.pow(lon2-lon,2) + Math.pow(lat2-lat,2));
+        return Math.sqrt(Math.pow(lon2 - lon, 2) + Math.pow(lat2 - lat, 2));
     }
 
     public double distance(GisPoint loc) {
-        return Math.sqrt(Math.pow(loc.lon-lon,2) + Math.pow(loc.lat-lat,2));
+        return Math.sqrt(Math.pow(loc.lon - lon, 2) + Math.pow(loc.lat - lat, 2));
     }
 
 }
-
-
-
